@@ -1,0 +1,53 @@
+﻿已經開始建置於 2012/5/11 上午 02:10:05。
+     1>節點 2 (build 目標) 上的專案 "C:\Users\HolyK\Desktop\Project\OpenMesh_Parameterization\OpenMesh_Parameterization\OpenMesh_Parameterization.vcxproj"。
+     1>InitializeBuildStatus:
+         由於指定了 "AlwaysCreate"，因此正在建立 "Release\OpenMesh_Parameterization.unsuccessfulbuild"。
+       GenerateTargetFrameworkMonikerAttribute:
+       將略過目標 "GenerateTargetFrameworkMonikerAttribute"，因為所有輸出檔對於其輸入檔而言都已更新。
+       ClCompile:
+         所有輸出都是最新的。
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I..\opencv\include\opencv /I..\opencv\include /I..\openmesh /I..\LinearSystem\Include /I..\LinearSystem\Taucs_vc8\src /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0" /Zi /clr /nologo /W3 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D _USE_MATH_DEFINES /D _MBCS /EHa /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Release\OpenMesh_Parameterization.pch" /Fo"Release\\" /Fd"Release\vc100.pdb" /TP /FUC:\Users\HolyK\Desktop\Project\OpenMesh_Parameterization\Release\GLPanel.dll /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\Microsoft.VisualC.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Core.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Data.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Design.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Drawing.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Windows.Forms.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Xml.dll" /analyze- /errorReport:prompt OpenMesh_Parameterization.cpp /clr:nostdlib 
+         OpenMesh_Parameterization.cpp
+         Automatically linking with LinearSystemLib_MD.lib.
+     1>c:\users\holyk\desktop\project\openmesh_parameterization\opencv\include\opencv2\flann\dist.h : warning C4819: 檔案含有無法在目前字碼頁 (950) 中表示的字元。請以 Unicode 格式儲存檔案以防止資料遺失
+     1>c:\users\holyk\desktop\project\openmesh_parameterization\opencv\include\opencv2\flann\dist.h : warning C4819: 檔案含有無法在目前字碼頁 (950) 中表示的字元。請以 Unicode 格式儲存檔案以防止資料遺失
+     1>c:\users\holyk\desktop\project\openmesh_parameterization\opencv\include\opencv2\flann\dist.h : warning C4819: 檔案含有無法在目前字碼頁 (950) 中表示的字元。請以 Unicode 格式儲存檔案以防止資料遺失
+     1>c:\users\holyk\desktop\project\openmesh_parameterization\opencv\include\opencv2\flann\dist.h : warning C4819: 檔案含有無法在目前字碼頁 (950) 中表示的字元。請以 Unicode 格式儲存檔案以防止資料遺失
+     1>C:\Users\HolyK\Desktop\Project\OpenMesh_Parameterization\opencv\include\opencv2/legacy/compat.hpp : warning C4819: 檔案含有無法在目前字碼頁 (950) 中表示的字元。請以 Unicode 格式儲存檔案以防止資料遺失
+     1>c:\users\holyk\desktop\project\openmesh_parameterization\openmesh_parameterization\Form1.h(431): warning C4018: '<' : signed/unsigned 不相符
+     1>c:\users\holyk\desktop\project\openmesh_parameterization\openmesh_parameterization\Form1.h(580): warning C4018: '<' : signed/unsigned 不相符
+     1>c:\users\holyk\desktop\project\openmesh_parameterization\openmesh_parameterization\Form1.h(591): warning C4018: '<' : signed/unsigned 不相符
+     1>c:\users\holyk\desktop\project\openmesh_parameterization\openmesh_parameterization\Form1.h(728): warning C4018: '<' : signed/unsigned 不相符
+     1>c:\users\holyk\desktop\project\openmesh_parameterization\openmesh_parameterization\Form1.h(793): warning C4018: '<' : signed/unsigned 不相符
+     1>c:\users\holyk\desktop\project\openmesh_parameterization\openmesh_parameterization\Form1.h(808): warning C4018: '<' : signed/unsigned 不相符
+     1>c:\users\holyk\desktop\project\openmesh_parameterization\openmesh_parameterization\Form1.h(734): warning C4102: 'std' : 未參考的標籤
+     1>c:\users\holyk\desktop\project\openmesh_parameterization\opencv\include\opencv2\core\mat.hpp(381): warning C4793: 'cv::Mat::release' : 函式以機器碼編譯 :
+         	找到 Managed 程式碼中不支援的內建
+     1>c:\users\holyk\desktop\project\openmesh_parameterization\opencv\include\opencv2\core\mat.hpp(2092): warning C4793: 'cv::SparseMat::addref' : 函式以機器碼編譯 :
+         	找到 Managed 程式碼中不支援的內建
+     1>c:\users\holyk\desktop\project\openmesh_parameterization\opencv\include\opencv2\core\mat.hpp(115): warning C4793: 'cv::Mat::Mat' : 函式以機器碼編譯 :
+         	找到 Managed 程式碼中不支援的內建
+         所有輸出都是最新的。
+       CoreResGen:
+         所有輸出都是最新的。
+       ResourceCompile:
+         所有輸出都是最新的。
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\HolyK\Desktop\Project\OpenMesh_Parameterization\Release\OpenMesh_Parameterization.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:..\openmesh /LIBPATH:..\freeglut /LIBPATH:..\opencv /LIBPATH:..\LinearSystem\Taucs_vc8\lib /LIBPATH:..\LinearSystem\lib libOpenMeshCore.lib glut32.lib opengl32.lib glu32.lib opencv_core231.lib opencv_highgui231.lib opencv_video231.lib opencv_ml231.lib opencv_legacy231.lib opencv_imgproc231.lib opencv_objdetect231.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /ASSEMBLYRESOURCE:Release\OpenMesh_Parameterization.Form1.resources /MANIFEST /ManifestFile:"Release\OpenMesh_Parameterization.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\HolyK\Desktop\Project\OpenMesh_Parameterization\Release\OpenMesh_Parameterization.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /ENTRY:"main" /DYNAMICBASE /FIXED:NO /NXCOMPAT /MACHINE:X86 Release\app.res
+         Release\AssemblyInfo.obj
+         Release\DotNetUitilities.obj
+         Release\GUA_OM.obj
+         Release\OpenMesh_Parameterization.obj
+         Release\stdafx.obj
+         "Release\.NETFramework,Version=v4.0.AssemblyAttributes.obj"
+         OpenMesh_Parameterization.vcxproj -> C:\Users\HolyK\Desktop\Project\OpenMesh_Parameterization\Release\OpenMesh_Parameterization.exe
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"C:\Users\HolyK\Desktop\Project\OpenMesh_Parameterization\Release\OpenMesh_Parameterization.exe;#1" /manifest Release\OpenMesh_Parameterization.exe.intermediate.manifest
+       FinalizeBuildStatus:
+         正在刪除檔案 "Release\OpenMesh_Parameterization.unsuccessfulbuild"。
+         正在變更時間戳記 "Release\OpenMesh_Parameterization.lastbuildstate"。
+     1>專案 "C:\Users\HolyK\Desktop\Project\OpenMesh_Parameterization\OpenMesh_Parameterization\OpenMesh_Parameterization.vcxproj" (build 目標) 建置完成。
+
+建置成功。
+
+經過時間 00:00:08.74

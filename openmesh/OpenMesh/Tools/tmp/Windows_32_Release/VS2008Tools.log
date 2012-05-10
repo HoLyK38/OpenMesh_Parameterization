@@ -1,0 +1,28 @@
+﻿已經開始建置於 2012/4/19 上午 06:04:31。
+     1>節點 3 (rebuild 目標) 上的專案 "C:\Users\HolyK\Desktop\OpenMesh\OpenMesh-2.1.1\src\OpenMesh\Tools\VS2008Tools.vcxproj"。
+     1>InitializeBuildStatus:
+         由於指定了 "AlwaysCreate"，因此正在建立 "tmp\Windows_32_Release\Tools.unsuccessfulbuild"。
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I..\.. /nologo /W3 /WX- /O2 /Oy- /D NDEBUG /D UNICODE /D WIN32 /D _USE_MATH_DEFINES /D NOMINMAX /Gm- /EHsc /MD /GS- /fp:precise /Zc:wchar_t- /Zc:forScope /GR /Fo"tmp\Windows_32_Release\\" /Fd".\\" /Gd /TP /analyze- /errorReport:prompt Utils\conio.cc Utils\Gnuplot.cc Utils\Timer.cc -Zm200 -w34100 -w34189 -Zm200 -w34100 -w34189 -w34100 -w34189 
+         conio.cc
+         Gnuplot.cc
+         Timer.cc
+         正在產生程式碼...
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I..\.. /nologo /W3 /WX- /O2 /Oy- /D NDEBUG /D UNICODE /D WIN32 /D _USE_MATH_DEFINES /D NOMINMAX /Gm- /EHsc /MD /GS- /fp:precise /Zc:wchar_t- /Zc:forScope /GR /Fo"tmp\Windows_32_Release\\" /Fd".\\" /Gd /TC /analyze- /errorReport:prompt Utils\getopt.c -Zm200 -w34100 -w34189 -Zm200 -w34100 -w34189 -w34100 -w34189 
+         getopt.c
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\Microsoft.CppBuild.targets(1151,5): warning MSB8012: TargetPath(C:\Users\HolyK\Desktop\OpenMesh\OpenMesh-2.1.1\src\OpenMesh\Tools\.\Tools.lib) 與 Library 的 OutputFile 屬性值 (C:\Users\HolyK\Desktop\OpenMesh\OpenMesh-2.1.1\lib\libOpenMeshTools.lib) 不相符。這可能會導致您的專案建置不正確。若要改正這種情況，請確認 $(OutDir)、$(TargetName) 和 $(TargetExt) 屬性值必須與 %(Lib.OutputFile) 中指定的值相符。
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\Microsoft.CppBuild.targets(1153,5): warning MSB8012: TargetName(Tools) 與 Library 的 OutputFile 屬性值 (libOpenMeshTools) 不相符。這可能會導致您的專案建置不正確。若要改正這種情況，請確認 $(OutDir)、$(TargetName) 和 $(TargetExt) 屬性值必須與 %(Lib.OutputFile) 中指定的值相符。
+       Lib:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\Lib.exe /OUT:"C:\Users\HolyK\Desktop\OpenMesh\OpenMesh-2.1.1\\lib\libOpenMeshTools.lib" /NOLOGO tmp\Windows_32_Release\conio.obj
+         tmp\Windows_32_Release\getopt.obj
+         tmp\Windows_32_Release\Gnuplot.obj
+         tmp\Windows_32_Release\Timer.obj
+         VS2008Tools.vcxproj -> C:\Users\HolyK\Desktop\OpenMesh\OpenMesh-2.1.1\src\OpenMesh\Tools\.\Tools.lib
+       FinalizeBuildStatus:
+         正在刪除檔案 "tmp\Windows_32_Release\Tools.unsuccessfulbuild"。
+         正在變更時間戳記 "tmp\Windows_32_Release\Tools.lastbuildstate"。
+     1>專案 "C:\Users\HolyK\Desktop\OpenMesh\OpenMesh-2.1.1\src\OpenMesh\Tools\VS2008Tools.vcxproj" (rebuild 目標) 建置完成。
+
+建置成功。
+
+經過時間 00:00:01.35
