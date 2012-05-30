@@ -1,6 +1,8 @@
 // OpenMesh_Parameterization.cpp: 主要專案檔。
+
 #include "stdafx.h"
 #include "Form1.h"
+
 using namespace OpenMesh_Parameterization;
 
 [STAThreadAttribute]

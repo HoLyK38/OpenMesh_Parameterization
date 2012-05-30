@@ -11,7 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{ADCE1811-E44C-42B5-9CC8-D0E0FA5DB4D7}</ProjectGuid>
+    <ProjectGuid>{C82652F6-EF6B-4C68-AA4B-D832568819A2}</ProjectGuid>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <Keyword>ManagedCProj</Keyword>
     <RootNamespace>OpenMesh_Parameterization</RootNamespace>
@@ -80,7 +80,7 @@
     <Reference Include="*System.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
     <Reference Include="*System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
     <Reference Include="GLPanel, Version=1.0.4491.42888, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\Release\GLPanel.dll</HintPath>
+      <HintPath>..\..\..\Project\OpenMesh_Parameterization\Release\GLPanel.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualC" />
     <Reference Include="System" />
@@ -106,6 +106,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Data.h" />
     <ClInclude Include="DotNetUtilities.h" />
     <ClInclude Include="Form1.h">
       <FileType>CppForm</FileType>

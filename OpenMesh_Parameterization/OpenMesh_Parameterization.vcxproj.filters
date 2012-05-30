@@ -53,15 +53,13 @@
     <ClInclude Include="DotNetUtilities.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
+    <ClInclude Include="Data.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="app.rc">
       <Filter>資源檔</Filter>
     </ResourceCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Form1.resX">
-      <Filter>資源檔</Filter>
-    </EmbeddedResource>
   </ItemGroup>
 </Project>

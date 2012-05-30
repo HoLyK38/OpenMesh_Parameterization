@@ -230,6 +230,8 @@ public:
 	OMT::FHandle                               select_fh;
 	OMT::VHandle							   select_vh;
 	std::vector<OMT::FHandle>				   select_mfh;
+	std::map<int, OMT::Point> texturePos;
+	GLuint texture_id;
 	//std::vector<OMT::EHandle>				   select_meh;
 	int                                        PatchType;
 
@@ -240,11 +242,14 @@ public:
 
 	void Render_Solid();
 	void Render_SolidWireframe();
+	void Render_TextureWireframe();
 	void Render_Wireframe();
 	void Render_Point();
+	void Test();
 	void Select_Face( int, int );
 	void Select_Point( int, int );
 	void Select_MulFace( int x, int y);
+	void Delete_MulFace( int x, int y);
 
 private:
 };
@@ -252,6 +257,7 @@ private:
 ///*======================================================================*/
 /*======================================================================*/
 bool ReadFile(std::string _fileName,Tri_Mesh *); //讀取mesh資料
+bool SaveFile(std::string _fileName,Tri_Mesh *);
 //	bool SaveFile(std::string _fileName);//儲存mesh資料
 /*初始化view port設定函式*/
 

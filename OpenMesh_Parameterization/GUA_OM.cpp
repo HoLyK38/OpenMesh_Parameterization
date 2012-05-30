@@ -550,7 +550,68 @@ void Tri_Mesh::Render_SolidWireframe()
 	glDisable(GL_POLYGON_OFFSET_FILL);
 
 }
+void Tri_Mesh::Render_TextureWireframe()
+{
+	FIter f_it;
+	FVIter	fv_it;
+	glEnable(GL_TEXTURE_2D);
+	glEnable(GL_POLYGON_OFFSET_FILL);
+	glEnable(GL_DEPTH_TEST);
+	glEnable(GL_LIGHTING);
+	glBindTexture(GL_TEXTURE_2D,texture_id);//選擇你要用的材質
+	glBegin(GL_TRIANGLES);
+	//glColor4f(1.0, 0.96, 0.49, 1.0);
+	for (f_it = faces_begin(); f_it != faces_end(); ++f_it) 
+	{
+		for (fv_it = fv_iter( f_it ); fv_it; ++fv_it)
+		{
+			int idx = fv_it.handle().idx();
+			glTexCoord2f(texturePos[idx][0],texturePos[idx][1]);
+			glVertex3dv(&point(fv_it.handle())[0]);
+		}
+	}
+	glEnd();
+	glDisable(GL_TEXTURE_2D);
 
+	/*
+	FIter f_it;
+	FVIter	fv_it;
+    glDisable(GL_LIGHTING);
+	glEnable(GL_POLYGON_OFFSET_FILL);
+	glEnable(GL_DEPTH_TEST);
+	glEnable(GL_TEXTURE_2D);
+	glPolygonOffset(2.0, 2.0);
+	glBindTexture(GL_TEXTURE_2D,texture_id);//選擇你要用的材質
+	glBegin(GL_TRIANGLES);
+	//glColor4f(1.0, 0.96, 0.49, 1.0);
+	for (f_it = faces_begin(); f_it != faces_end(); ++f_it) 
+	{
+		for (fv_it = fv_iter( f_it ); fv_it; ++fv_it)
+		{
+			int idx = fv_it.handle().idx();
+			glTexCoord2f(texturePos[idx][0],texturePos[idx][1]);
+			glVertex3dv(&point(fv_it.handle())[0]);
+		}
+	}
+	glEnd();
+	glDisable(GL_TEXTURE_2D);
+	glLineWidth(1.0);
+	glColor3f(0.0, 0.0, 0.0);	
+	glBegin(GL_LINES);
+	for(OMT::EIter e_it = edges_begin(); e_it != edges_end(); ++e_it)
+	{
+		OMT::HEHandle _hedge = halfedge_handle(e_it.handle(),1);
+
+		OMT::Point curVertex  = point(from_vertex_handle(_hedge));
+		glVertex3dv(&curVertex[0]);
+		
+		curVertex = point(to_vertex_handle(_hedge));
+		glVertex3dv(&curVertex[0]);			
+	}
+	glEnd();
+	glDisable(GL_POLYGON_OFFSET_FILL);
+	*/
+}
 void Tri_Mesh::Render_Wireframe()
 {
 	//glPushAttrib(GL_LIGHTING_BIT);	
@@ -683,6 +744,7 @@ void Tri_Mesh::Select_Point( int x, int y)
 	}
 	//select_fi = vf_iter(select_vh);
 }
+
 void Tri_Mesh::Select_MulFace( int x, int y)
 {
 	GLdouble M[16], P[16]; GLint V[4];
@@ -728,50 +790,68 @@ void Tri_Mesh::Select_MulFace( int x, int y)
 	{
 		if(fh_temp==select_mfh[i])
 		{
+			break;
 			/*
-			for(OMT::FEIter fe_it= fe_iter(fh_temp) ; fe_it ; ++fe_it)
-			{
-				for(int k=0;k<select_meh.size();k++)
-				{
-					if(select_meh[k] == fe_it.handle() )
-					{
-						select_meh.erase(select_meh.begin()+k);
-						k--;
-					}
-				}
-			}
-			*/
 			select_mfh.erase(select_mfh.begin()+i);
 			i--;
 			break;
+			*/
 		}
 	}
 	if(i==select_mfh.size())
 	{
 		select_mfh.push_back(fh_temp);
-		/*
-		bool flag = false;
-		for(OMT::FEIter fe_it= fe_iter(fh_temp) ; fe_it ; ++fe_it)
-		{
-			flag = false;
-			for(int k=0;k<select_meh.size();k++)
-			{
-				if(select_meh[k] == fe_it.handle() )
-				{
-					select_meh.erase(select_meh.begin()+k);
-					k--;
-					flag = true;
-				}
-			}
-			if(!flag)
-			{
-				select_meh.push_back(fe_it.handle());
-			}
-		}
-		*/
 	}
+}
 
+void Tri_Mesh::Delete_MulFace( int x, int y)
+{
+	GLdouble M[16], P[16]; GLint V[4];
+	GLfloat      depth_buffer;
+	glGetDoublev(GL_MODELVIEW_MATRIX, M);
+	glGetDoublev(GL_PROJECTION_MATRIX, P);
+	glGetIntegerv(GL_VIEWPORT, V);
+
+
+	glReadPixels( x, y, 1, 1, GL_DEPTH_COMPONENT, GL_FLOAT,  &depth_buffer );
+
+	double objX, objY, objZ;
+	gluUnProject( x , y , depth_buffer , M, P , V,  &objX ,  &objY ,  &objZ );
+
+	double  error =  9999999;
+
+	OMT::Point pt( objX, objY, objZ );
+	OMT::Point pointA,pointB,pointC;
+	OMT::FHandle fh_temp;
 	
+
+	for( OMT::FIter f_it = faces_begin() ; f_it != faces_end() ; ++f_it )
+	{
+		double temp_area  = 0 ;
+		double a1,a2,a3,sum;
+		OMT::FVIter fv_it = fv_iter( f_it );
+		pointA = point(fv_it.handle());
+		pointB = point((++fv_it).handle());
+		pointC = point((++fv_it).handle());
+		temp_area = area(pointA,pointB,pointC);
+		a1 = area(pointA,pointB,pt);
+		a2 = area(pointA,pointC,pt);
+		a3 = area(pointB,pointC,pt);
+		sum = a1+a2+a3;
+		if( (sum-temp_area) < error)
+		{
+			fh_temp = f_it.handle();
+			error = sum-temp_area;
+		}
+	}
+	for(int i=0;i<select_mfh.size();i++)
+	{
+		if(fh_temp==select_mfh[i])
+		{
+			select_mfh.erase(select_mfh.begin()+i);
+			break;
+		}
+	}
 }
 
 
@@ -793,4 +873,15 @@ bool ReadFile(std::string _fileName,Tri_Mesh *_mesh)
 		}
 	}
 	return isRead;
+}
+
+bool SaveFile(std::string _fileName,Tri_Mesh *_mesh)
+{
+	bool isSave = false;
+	OpenMesh::IO::Options opt;
+	if ( OpenMesh::IO::write_mesh(*_mesh, _fileName, opt) )
+	{
+			isSave = true;
+	}
+	return isSave;
 }
